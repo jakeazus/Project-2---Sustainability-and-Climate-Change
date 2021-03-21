@@ -3,6 +3,5 @@ This project focuses on Climate Change factors world-wide and utilizes an intera
 
 We created a dashboard of visuals using [d3, plotly, leaflet] to showcase our findings. 
 * Pie chart 
-* Line Graph 
-* something else 
-* something else
+* Bar Chart 
+* Bubble Chart
