@@ -82,7 +82,7 @@ def TopRenewableEnergy():
 def BottomC02():
 
     result = connection.execute("""SELECT country_code, country_name, "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010"
-     FROM carbon_dioxide ORDER BY "2015" ASC LIMIT 10;""")
+     FROM carbon_dioxide ORDER BY "2010" ASC;""")
 
     data = []
     for row in result:
@@ -105,7 +105,37 @@ def BottomC02():
         print(row)
     return(jsonify(data))
 
+@app.route("/CO2 Emission over 15 years")
+def overYears():
 
+    result = connection.execute("""SELECT country_code, country_name, "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008",
+     "2009", "2010", "2011", "2012", "2013", "2014", "2015" FROM carbon_dioxide;""")
+
+    data = []
+    for row in result:
+        my_dict = {
+            "country_code":row[0],
+            "country_name": row[1],
+            "2000":float(row[2]),
+            "2001":float(row[3]),
+            "2002":float(row[4]),
+            "2003":float(row[5]),
+            "2004":float(row[6]),
+            "2005":float(row[7]),
+            "2006":float(row[8]),
+            "2007":float(row[9]),
+            "2008":float(row[10]),
+            "2009":float(row[11]),
+            "2010":float(row[12]),
+            "2011":float(row[13]),
+            "2012":float(row[14]),
+            "2013":float(row[15]),
+            "2014":float(row[16]),
+            "2015":float(row[17]),
+        }
+        data.append(my_dict)
+        print(row)
+    return(jsonify(data))
 
 if __name__ == "__main__":
     app.run(debug=True)
