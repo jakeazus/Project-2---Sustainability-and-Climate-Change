@@ -18,13 +18,20 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
-@app.route("/api/v1.0/names")
+@app.route("/Country_Names")
 def names():
 
-    result = connection.execute("select * from carbon_dioxide")
+    result = connection.execute("""SELECT country_code, country_name, "2015" FROM carbon_dioxide ORDER BY "2015" DESC LIMIT 20;""")
+    data = []
     for row in result:
+        my_dict = {
+            "country_code":row[0],
+            "country_name": row[1],
+            "2015":float(row[2])
+        }
+        data.append(my_dict)
         print(row)
-
+    return(jsonify(data))
 
 if __name__ == "__main__":
     app.run(debug=True)
