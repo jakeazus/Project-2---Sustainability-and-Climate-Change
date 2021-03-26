@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 #################################################
 # Database Setup
@@ -12,11 +12,13 @@ connection = engine.connect()
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
-
 #################################################
 # Flask Routes
 #################################################
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route("/Top 20 Countries by CO2 Emission")
 def TopC02():
