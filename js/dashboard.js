@@ -1,3 +1,5 @@
+var formatAsInteger = d3.format(",");
+
 function d3PieChart(dataset){
 
   var margin = {top: 30, right: 5, bottom: 20, left: 50};
@@ -60,7 +62,7 @@ function d3PieChart(dataset){
     vis.append("svg:text")
         .attr("dy", ".35em")
         .attr("text-anchor", "middle")
-        .text("Survivors of Titanic")
+        .text("Top 20 Countries by CO2 Emission")
         .attr("class","title");
 
     function mouseover() {
@@ -81,65 +83,12 @@ function d3PieChart(dataset){
 
 }
 
-queue()
-    .defer(d3.json, piechartDataUrl)
-    .await(ready);
-    
-function ready(dataset) {
-    d3PieChart(dataset);
-    //d3BarChart(datasetBarChart);
-    }
+ function ready(dataset) {
+     d3PieChart(dataset);
+//     //d3BarChart(datasetBarChart);
+     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// set the color scale
-//var color = d3.scaleOrdinal()
-//  .domain(["a", "b", "c", "d", "e", "f"])
-//  .range(d3.schemeDark2);
-
-// A function that create / update the plot for a given variable:
-// function update(data) {
-
-//   // Compute the position of each group on the pie:
-//   var pie = d3.pie()
-//     .value(function(d) {return d.value; })
-//     .sort(function(a, b) { console.log(a) ; return d3.ascending(a.key, b.key);} ) // This make sure that group order remains the same in the pie chart
-//   var data_ready = pie(d3.entries(data))
-
-//   // map to data
-//   var u = svg.selectAll("path")
-//     .data(data_ready)
-
-//   // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-//   u
-//     .enter()
-//     .append('path')
-//     .merge(u)
-//     .transition()
-//     .duration(1000)
-//     .attr('d', d3.arc()
-//       .innerRadius(0)
-//       .outerRadius(radius)
-//     )
-//     .attr('fill', function(d){ return(color(d.data.key)) })
-//     .attr("stroke", "white")
-//     .style("stroke-width", "2px")
-//     .style("opacity", 1)
-// EXAMPLE: Bubble chart code with user input: https://www.d3-graph-gallery.com/graph/bubble_tooltip.html
-
-// EXAMPLE: Bargraph code with user input: https://blog.risingstack.com/d3-js-tutorial-bar-charts-with-javascript/
+ready(piechartDataURL);
 
 
 
