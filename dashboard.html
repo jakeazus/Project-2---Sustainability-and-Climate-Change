@@ -3,44 +3,45 @@
 
 <head>
   <meta charset="utf-8">
-  <title>UFO Finder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">NAVBAR TITLE
-            <img class="climate-thoughts" src="">
-          </a>
-        </div>
+  <div class="container"></div>
+  <img src="Images/10.png" alt="World" class="center">
+  </img>
+  </div>
+  <div class="hero text-center">
+    <h1>CLIMATE CHANGE DASHBOARD </h1>
+    <p>A study on Climate Change factors for the leading 20 countries CO2 Emissions (2015). </p>
+  </div>
+  <div class="container">
+    <div class="row margin-top-50">
+      <div class="col-md-2">
       </div>
-    </nav>
-    <div class="hero text-center">
-      <h1>CLIMATE CHANGE AND SUSTAINABILITY </h1>
-      <p>PARAGRAPH TITLE</p>
-    </div>
-    <div class="container">
-      <div class="row margin-top-50">
-        <div class="col-md-2">
-          
-        </div>
-        <div id="pieChart">
-        </div>
+      <div class="pie">
       </div>
     </div>
-    <footer class="footer">
-      <span class="bottom">Project 2: Anna Bowers, Jake Azus, Justine Sbarra, Ivana Korak, Mario Lozano</span>
-    </footer>
+  </div>
+  <div class="btn-group">
+    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Pick A Country:
+    </button>
+    <ul class="dropdown-menu">
+      <!-- THIS IS LIST OF TOP 20 COUNTRIES, append ul elements` -->
+      ...
+    </ul>
+  </div>
+  <footer class="footer">
+    <span class="bottom">Project 2: Anna Bowers, Jake Azus, Justine Sbarra, Ivana Korak, Mario Lozano</span>
+  </footer>
   </div>
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="https://d3js.org/d3-queue.v3.min.js"></script>
-  <script var piechartDataURL = "{{ url_for('Top 20 Countries by CO2 Emission') }}";></script>
+  <script var piechartDataURL="{{ url_for('Top 20 Countries by CO2 Emission') }}" ;></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
   <script src="js/dashboard.js"></script>
   <script src="app.py"></script>

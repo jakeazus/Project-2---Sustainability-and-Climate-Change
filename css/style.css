@@ -2,11 +2,9 @@ body {background-color: #34348c;}
 
 .center {
   display: block;
-<<<<<<< HEAD
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-=======
   width: 100%;
   padding: 8px;
   color: #8e979f;
@@ -128,7 +126,6 @@ body {background-color: #34348c;}
   .hero h1 {
     animation: smaller-title 1.2s forwards linear;
   }
->>>>>>> ce59e084082dbb9e163220febae516c8ac542c64
 }
 
 .btn-group{
