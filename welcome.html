@@ -9,38 +9,64 @@
 </head>
 
 <body>
+  <!-- Image header -->
   <div class="container"></div>
-  <img src="Images/10.png" alt="World" class="center">
-  </img>
+  <div class="row">
+    <img src="Images/10.png" alt="World" class="center"></img>
   </div>
-  <div class="hero text-center">
-    <h1>CLIMATE CHANGE DASHBOARD </h1>
-    <p>A study on Climate Change factors for the leading 20 countries CO2 Emissions (2015). </p>
-  </div>
-  <div class="container">
-    <div class="row margin-top-50">
-      <div class="col-md-2">
-      </div>
-      <div class="pieChart">
+
+  <!-- 1st row contains title and paragraph describing dashboard -->
+  <div class="row">
+    <div class="col-xs-12  col-md-12">
+      <div class="hero text-center">
+        <h1>CLIMATE CHANGE DASHBOARD</h1>
+        <p>A study on Climate Change factors for the leading 20 countries CO2 Emissions (2015). </p>
       </div>
     </div>
   </div>
-  <div class="btn-group">
-    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
-      aria-expanded="false">
-      Pick A Country:
-    </button>
-    <ul class="dropdown-menu">
-      <!-- THIS IS LIST OF TOP 20 COUNTRIES, append ul elements` -->
-      ...
-    </ul>
+  <!-- 2nd row for PIE CHART  -->
+  <div class="row">
+    <div class="col-xs-12  col-md-10">
+      <div class="pieChart">
+        <!-- We append our pie chart here. -->
+      </div>
+    </div>
   </div>
-  <footer class="footer">
-    <span class="bottom">Project 2: Anna Bowers, Jake Azus, Justine Sbarra, Ivana Korak, Mario Lozano</span>
-  </footer>
+  <!-- 3rd row for 2 HORIZONTAL BARCHARTS -->
+  <div class="row">
+    <div class="col-xs-12  col-md-6">
+      <div class="RenewableBar">
+        <!-- We append our Renewable Energy bar graph here. -->
+      </div>
+    </div>
+    <div class="col-xs-12  col-md-6">
+      <div class="GDPBar">
+        <!-- We append our GDP bar graph here. -->
+      </div>
+    </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  <script src="js/dashboard.js"></script>
+
+  <!-- 4th row for FINDINGS FROM DATA  -->
+  <div class="row">
+    <div class="col-xs-12  col-md-12">
+      <div class="article text-center">
+        <h2>Correlations Discovered Between CO2 Emissions, Renewable Energy (%), and GDP</h2>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+          tortor
+          quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+          Aenean
+          ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <footer class="footer">
+        <span class="bottom">Project 2: Anna Bowers, Jake Azus, Justine Sbarra, Ivana Korak, Mario Lozano</span>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 
 </html>
