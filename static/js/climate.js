@@ -1,7 +1,7 @@
 // // PIE CHART
 
-function d3PieChart(dataset){
-    url = "http://127.0.0.1:5000/top20CO2".concat(dataset)
+function d3PieChart(){
+    url = "/top20CO2"
     d3.json(url, function(data) {
         
         console.log(data);
@@ -23,20 +23,27 @@ function d3PieChart(dataset){
           .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
         // Create dummy data
-        var data = data['2015'];
+        var pie_data = {}
+        data
+        // .slice(0,4)
+        .map(obj=>{
+            pie_data[obj.country_code] = obj["2015"]
+        });
 
         // set the color scale
         var color = d3.scaleOrdinal()
-        .domain(data)
-        .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"])
+        .domain(pie_data)
+        .range(data.map(obj=>obj.color))
+        // .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"])
+
 
         // Compute the position of each group on the pie:
         var pie = d3.pie()
         .value(function(d) {return d.value; })
-        var data_ready = pie(d3.entries(data))
+        var data_ready = pie(d3.entries(pie_data))
 
         // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-        svg.selectAll('#pieChart')
+        svg.selectAll('.pieChart')
         .data(data_ready)
         .enter()
         .append('path')
@@ -53,7 +60,7 @@ function d3PieChart(dataset){
 }
 
 
-// d3PieChart('#pieChart');
+d3PieChart();
         
 // BAR CHART -- https://www.d3-graph-gallery.com/graph/barplot_horizontal.html
 function d3barChart(dataset){

@@ -26,13 +26,15 @@ def index():
 def TopC02():
 
     result = connection.execute(
-        """SELECT country_code, country_name, "2015" FROM carbon_dioxide ORDER BY "2015" DESC LIMIT 20;""")
+        """SELECT country_code, country_name, "2015", color FROM carbon_dioxide_top20 ORDER BY "2015" DESC LIMIT 20;""")
     data = []
     for row in result:
         my_dict = {
             "country_code": row[0],
             "country_name": row[1],
-            "2015": float(row[2])
+            "2015": float(row[2]),
+            "color": row[3]
+
         }
         data.append(my_dict)
         print(row)
