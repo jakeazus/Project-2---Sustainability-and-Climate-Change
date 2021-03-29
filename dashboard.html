@@ -5,50 +5,75 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
 </head>
 
 <body>
+  <!-- Image header -->
   <div class="container"></div>
-  <img src="Images/10.png" alt="World" class="center">
-  </img>
+  <img src="Images/10.png" alt="World" class="center"></img>
   </div>
-  <div class="hero text-center">
-    <h1>CLIMATE CHANGE DASHBOARD </h1>
-    <p>A study on Climate Change factors for the leading 20 countries CO2 Emissions (2015). </p>
-  </div>
+
+  <!-- First row contains dropdown and country selected -->
   <div class="container">
-    <div class="row margin-top-50">
-      <div class="col-md-2">
+    <div class="row">
+      <!-- Begin drop down menu  -->
+      <div class="col-md-4">
+        <!-- Drop down goes here -->
       </div>
-      <div class="pie">
+      <div class="col-md-8">
+        <!-- Change header based on country selected -->
+        <div class="hero text-center">
+          <h1>CHOSEN COUNTRY HERE </h1>
+          <p>A study on Climate Change factors for the leading 20 countries CO2 Emissions (2015). </p>
+        </div>
       </div>
     </div>
+    <!-- NEXT ROW FOR SCATTER PLOT  -->
+    <div class="row">
+      <div class="col-xs-12  col-md-9">
+        <div id="scatter">
+          <!-- We append our scatter chart here. -->
+        </div>
+      </div>
+    </div>
+    <!-- NEXT ROW FOR BUBBLE CHART  -->
+    <div class="row">
+      <div class="col-xs-12  col-md-9">
+        <div id="bubble">
+          <!-- We append our bubble chart here. -->
+        </div>
+      </div>
+    </div>
+    <!-- NEXT ROW FOR ANY FINDINGS -->
+    <div class="row">
+      <div class="col-xs-12  col-md-9">
+        <div class="article">
+          <h2>Correlations Discovered Between Health Risks and Age, Income</h2>
+          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+            tortor
+            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+            Aenean
+            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div class="btn-group">
-    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
-      aria-expanded="false">
-      Pick A Country:
-    </button>
-    <ul class="dropdown-menu">
-      <!-- THIS IS LIST OF TOP 20 COUNTRIES, append ul elements` -->
-      ...
-    </ul>
+
+
+
+
+  <!-- Begin Footer -->
+  <div id="footer">
+    <p>Project 2: Anna Bowers, Jake Azus, Justine Sbarra, Ivana Korak, Mario Lozano</p>
   </div>
-  <footer class="footer">
-    <span class="bottom">Project 2: Anna Bowers, Jake Azus, Justine Sbarra, Ivana Korak, Mario Lozano</span>
-  </footer>
-  </div>
+
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="https://d3js.org/d3-queue.v3.min.js"></script>
-<<<<<<< HEAD
-  <script var piechartDataURL="{{ url_for('Top 20 Countries by CO2 Emission') }}" ;></script>
-=======
-  <script var piechartDataURL = "{{ url_for('Top 20 Countries by CO2 Emission') }}"></script>
->>>>>>> 6f6ba5414cb9589c270a88a4d8bc4f59a4462d3a
+  <!-- <script var piechartDataURL = "{{ url_for('Top 20 Countries by CO2 Emission') }}"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
   <script src="js/dashboard.js"></script>
-  <script src="app.py"></script>
 </body>
 
 </html>
