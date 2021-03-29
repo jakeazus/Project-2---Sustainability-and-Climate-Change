@@ -1,4 +1,4 @@
-// PIE CHART
+// // PIE CHART
 
 function d3PieChart(dataset){
     url = "http://127.0.0.1:5000/Top 20 Countries by CO2 Emission".concat(dataset)
@@ -53,7 +53,7 @@ function d3PieChart(dataset){
 }
 
 
-d3PieChart('#pieChart');
+// d3PieChart('#pieChart');
         
 // BAR PLOT
 function d3barChart(dataset){
@@ -75,7 +75,7 @@ function d3barChart(dataset){
   var xAxis = d3.svg.axis()
   .scale(x)
   .orient("bottom")
-  .tickFormat(d3.time.format("%Y-%m"));
+  .tickFormat(d3.columns);
 
   var yAxis = d3.svg.axis()
   .scale(y)
@@ -89,10 +89,16 @@ function d3barChart(dataset){
   .attr("transform", 
         "translate(" + margin.left + "," + margin.top + ")");
 
-  d3.csv("../data/top20_CO2df.csv", function(error, data) {
+
+    d3.csv("../data/top20_CO2df.csv", function(csv) {
+      csv = csv.filter(function(row) {
+          return row['Country Name'] == 'China';
+      })
+      vis.datum(csv).call(chart);
+  });
 
   data.forEach(function(d) {
-      d.date = parseDate(d.date);
+      // d.date = parseDate(d.date);
       d.value = +d.value;
   });
 
@@ -128,4 +134,4 @@ function d3barChart(dataset){
     .attr("y", function(d) { return y(d.value); })
     .attr("height", function(d) { return height - y(d.value); });
 
-  });
+  };
