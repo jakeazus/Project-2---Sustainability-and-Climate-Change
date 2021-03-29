@@ -1,7 +1,7 @@
 // // PIE CHART
 
 function d3PieChart(dataset){
-    url = "http://127.0.0.1:5000/Top 20 Countries by CO2 Emission".concat(dataset)
+    url = "http://127.0.0.1:5000/top20CO2".concat(dataset)
     d3.json(url, function(data) {
         
         console.log(data);
@@ -57,5 +57,4 @@ function d3PieChart(dataset){
         
 // BAR CHART -- https://www.d3-graph-gallery.com/graph/barplot_horizontal.html
 function d3barChart(dataset){
-
-  
+}
