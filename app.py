@@ -4,7 +4,7 @@ from flask import Flask, jsonify, render_template
 #################################################
 # Database Setup
 #################################################
-connection_string = "postgres:270504@localhost:5432/climate_change_db"
+connection_string = "postgres:Reebtoor8*@localhost:5432/climate_change"
 engine = create_engine(f'postgresql://{connection_string}')
 
 connection = engine.connect()
