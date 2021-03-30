@@ -51,7 +51,7 @@ def TopGDP():
         my_dict = {
             "country_code": row[0],
             "country_name": row[1],
-            "2015": float(row[3]),
+            "country_gdp": float(row[3]),
             "color": row[2]
         }
         data.append(my_dict)
@@ -69,7 +69,7 @@ def TopRenewableEnergy():
         my_dict = {
             "country_code": row[0],
             "country_name": row[1],
-            "2015": float(row[3]),
+            "country_energy": float(row[3]),
             "color": row[2]
         }
         data.append(my_dict)
