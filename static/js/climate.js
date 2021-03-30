@@ -7,7 +7,7 @@ function d3PieChart(){
       console.log(data);
 
       // set the dimensions and margins of the graph
-      var width = 950;
+      var width = 2000;
       var height = 700;
       var margin = 40;
 
