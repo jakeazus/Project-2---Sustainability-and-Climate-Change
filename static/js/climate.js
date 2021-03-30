@@ -7,7 +7,7 @@ function d3PieChart(){
       console.log(data);
 
       // set the dimensions and margins of the graph
-      var width = 2000;
+      var width = 2350;
       var height = 700;
       var margin = 40;
 
@@ -79,8 +79,8 @@ url = "/top20GDP"
 d3.json(url, function (data) {
   console.log(data);
   // set the dimensions and margins of the graph
-  var margin = { top: 20, right: 30, bottom: 40, left: 90 },
-    width = 800 - margin.left - margin.right,
+  var margin = { top: 30, right: 30, bottom: 55, left: 90 },
+    width = 1000 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom;
   // append the svg object to the body of the page
   var svg = d3.select(".GDPBar")
@@ -123,13 +123,20 @@ d3.json(url, function (data) {
     .padding(.1);
   svg.append("g")
     .call(d3.axisLeft(y))
-    // svg.append("text")
-    // .attr("transform", "rotate(-90)")
-    // .attr("y", 0 - margin.left)
-    // .attr("x",0 - (height / 2))
-    // .attr("dy", "1em")
-    // .style("text-anchor", "middle")
-    // .text("Country Code");     
+    svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - margin.left)
+    .attr("x",0 - (height / 2))
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .text("Country Code");
+    svg.append("text")
+    .attr("x", (width / 2))             
+    .attr("y", 0 - (margin.top / 2))
+    .attr("text-anchor", "middle")  
+    .style("font-size", "20px") 
+    .style("text-decoration", "underline")  
+    .text("GDP PER COUNTRY");     
   
 
 
@@ -152,8 +159,8 @@ function d3EnergyBar() {
   d3.json(url, function (data) {
     console.log(data);
     // set the dimensions and margins of the graph
-    var margin = { top: 20, right: 80, bottom: 50, left: 180 },
-      width = 800 - margin.left - margin.right,
+    var margin = { top: 30, right: 30, bottom: 55, left: 90 },
+      width = 1000 - margin.left - margin.right,
       height = 700 - margin.top - margin.bottom;
     // append the svg object to the body of the page
     var svg = d3.select(".RenewableBar")
@@ -202,12 +209,20 @@ function d3EnergyBar() {
       .attr("x",0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
-      .text("Country Code");     
+      .text("Country Code"); 
+    
+      svg.append("text")
+      .attr("x", (width / 2))             
+      .attr("y", 0 - (margin.top / 2))
+      .attr("text-anchor", "middle")  
+      .style("font-size", "20px") 
+      .style("text-decoration", "underline")  
+      .text("RENEWABLE ENERGY CONSUMPTION PER COUNTRY");     
     
   
   
     //Bars
-    svg.selectAll(".GDPBar")
+    svg.selectAll(".RenewableBar")
       .data(data)
       .enter()
       .append("rect")
