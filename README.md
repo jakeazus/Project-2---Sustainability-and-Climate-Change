@@ -30,7 +30,7 @@ This project focuses on Climate Change factors for the leading 20 countries CO2 
 * Narrowed down visualization inspiration to enhance our data findings 
 * [Cleaned 3 csv's](data/Clean_Data.ipynb)  
 * Located the top 20 Countries with the highest CO2 Emissions and [parsed through each cleaned csv to filter the top 20 countries](data/climate_change.ipynb)
-* Loaded our new tables into [Postgres](SQL_data/Table_script.sql)
+* Loaded our new tables into [Postgres](SQL_DATA/Table_script.sql)
 * Created [sqlalchemy routes](app.py) and [javascript d3 visualizations](static/js/climate.js) to append the graphs to the browser 
 * Developed an [html page](templates/welcome.html)  and [css](static/css/style.css) to enhance the user's experience. 
 
