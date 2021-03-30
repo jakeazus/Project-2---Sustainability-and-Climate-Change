@@ -27,17 +27,19 @@
     </div>
     <!-- 2nd row for PIE CHART  -->
     <div class="row">
-      
-        <div class="col-xs-12  col-md-12">
-          <div class="hero text-center">
-          <div class="pieChart">  
+
+      <div class="col-xs-12  col-md-12">
+        <div class="hero text-center">
+          <div class="pieChart">
             <!-- We append our pie chart here. -->
             <center>
-            <h4>This pie chart represents the top 20 countries with the highest C02 emission (in kilotons). </center></h4>
+              <h4>This pie chart represents the top 20 countries with the highest C02 emission (in kilotons).
+            </center>
+            </h4>
           </div>
         </div>
-        </div>
-      
+      </div>
+
     </div>
     <!-- 3rd row for 2 HORIZONTAL BARCHARTS -->
     <div class="row">
@@ -46,7 +48,7 @@
           <!-- We append our Renewable Energy bar graph here. -->
           <h4>This bar chart reprsents the top 20 countries with the highest renewable energy consumption (% of total
             final energy consumption). </h4>
-            <br>
+          <br>
         </div>
       </div>
       <div class="col-xs-12  col-md-6">
@@ -54,7 +56,7 @@
           <!-- We append our GDP bar graph here. -->
           <h4>This bar chart represents the top 20 countries with the highest gross domestic product (GDP per capita
             growth (annual %)). </h4>
-            <br>
+          <br>
         </div>
       </div>
     </div>
@@ -62,23 +64,27 @@
     <!-- 4th row for FINDINGS FROM DATA  -->
     <div class="row">
       <div class="col-xs-12  col-md-12">
-        <div class="article text-center">
-          <!-- <h2>Correlations Discovered Between CO2 Emissions, Renewable Energy (%), and GDP</h2> -->
+        <div>
+          <h1>Correlations Discovered Between CO2 Emissions, Renewable Energy (%), and GDP</h1>
           <br>
-          <br>
-          <p></p>
+          <h3>China and America make up more than ½ of CO2 emissions than the next 18 leading countries. China also
+            has the 2nd largest gross domestic product in 2015, with clear indications that higher GDP results in
+            higher CO2 emissions. Brazil, Indonesia, and India lead the charge in renewable
+            energy as more than one-third of their energy is sourced sustainably. </h3>
         </div>
       </div>
+    </div>
+    <br>
+    <br>
 
-
-      <div class="row">
-        <footer class="footer">
-          <span class="bottom">Project 2: Anna Bowers, Jake Azus, Justine Sbarra, Ivana Korak, Mario Lozano</span>
-        </footer>
-      </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-      <!-- <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
-      <script src="{{url_for('static', filename='js/climate.js')}}"></script>
+    <div class="row">
+      <footer class="footer">
+        <span class="bottom">Project 2: Anna Bowers, Jake Azus, Justine Sbarra, Ivana Korak, Mario Lozano</span>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <!-- <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
+    <script src="{{url_for('static', filename='js/climate.js')}}"></script>
   </center>
 </body>
 
