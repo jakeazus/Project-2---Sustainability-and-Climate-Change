@@ -2,7 +2,7 @@
 This project focuses on Climate Change factors for the leading 20 countries CO2 Emissions from 2015. We analyzed world wide CO2 emissions, GDP, and Renewable Energy (% to total energy) to see if there were any consistencies in these countries. Finally, we developed an flask app to connect our data stored in SQLPOstgres which showcases a visual dashboard and conclusive findings.  
 
 # Findings
-
+China and America make up more than ½ of CO2 emissions than the next 18 leading countries. China also has the 2nd largest gross domestic product in 2015, with clear indications that higher GDP results in higher CO2 emissions. Despite this, although America is the 2nd largest CO2 producing country, they are 9th in GDP and 14th in renewable energy sources. Brazil,  Indonesia, and India lead the charge in renewable energy as more than one-third of their energy is sourced sustainably. In juxtaposition, Brazil has the lowest GDP out of the top 20 countries, concluding that GDP and renewable energy emphasis are not positively correlated. Saudia Arabia and Iran have little to no renewable energy sources, likely a result of the emphasis on fossil fuel production. 
 
 # Top 20 Countries with highest CO2 Emissions: 
 *  China
