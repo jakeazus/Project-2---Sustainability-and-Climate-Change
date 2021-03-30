@@ -7,8 +7,8 @@ function d3PieChart(){
       console.log(data);
 
       // set the dimensions and margins of the graph
-      var width = 2350;
-      var height = 700;
+      var width = 2800;
+      var height = 800;
       var margin = 40;
 
       // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
@@ -60,7 +60,10 @@ function d3PieChart(){
       .data(data_ready)
       .enter()
       .append('text')
-      .text(function(d){ return d.data.country_code})
+      .text(function(d){ return (d.data.country_code)})
+      // .attr("x",300)
+      // .attr("y",300)
+      .attr("fill", "white")
       .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
       .style("text-anchor", "middle")
       .style("font-size", 17)
@@ -115,6 +118,8 @@ d3.json(url, function (data) {
             "translate(" + (width/2) + " ," + 
                            (height + margin.top + 20) + ")")
       .style("text-anchor", "middle")
+      .style("font-size", "22px")
+      .attr("fill", "white")  
       .text("GDP");
   // Y axis
   var y = d3.scaleBand()
@@ -129,13 +134,16 @@ d3.json(url, function (data) {
     .attr("x",0 - (height / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
+    .style("font-size", "22px")
+    .attr("fill", "white")  
     .text("Country Code");
     svg.append("text")
     .attr("x", (width / 2))             
     .attr("y", 0 - (margin.top / 2))
     .attr("text-anchor", "middle")  
     .style("font-size", "20px") 
-    .style("text-decoration", "underline")  
+    .style("text-decoration", "underline")
+    .attr("fill", "white")  
     .text("GDP PER COUNTRY");     
   
 
@@ -195,6 +203,8 @@ function d3EnergyBar() {
               "translate(" + (width/2) + " ," + 
                              (height + margin.top + 20) + ")")
         .style("text-anchor", "middle")
+        .style("font-size", "22px")
+        .attr("fill", "white")  
         .text("Renewable Energy Consumption");
     // Y axis
     var y = d3.scaleBand()
@@ -209,6 +219,8 @@ function d3EnergyBar() {
       .attr("x",0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
+      .style("font-size", "22px")
+      .attr("fill", "white")  
       .text("Country Code"); 
     
       svg.append("text")
@@ -216,6 +228,7 @@ function d3EnergyBar() {
       .attr("y", 0 - (margin.top / 2))
       .attr("text-anchor", "middle")  
       .style("font-size", "20px") 
+      .attr("fill", "white")
       .style("text-decoration", "underline")  
       .text("RENEWABLE ENERGY CONSUMPTION PER COUNTRY");     
     
