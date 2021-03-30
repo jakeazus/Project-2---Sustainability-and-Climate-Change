@@ -21,7 +21,7 @@ app = Flask(__name__)
 def index():
     return render_template('welcome.html')
 
-
+# Top 20 CO2 connection
 @app.route("/top20CO2")
 def TopC02():
 
@@ -40,7 +40,7 @@ def TopC02():
         print(row)
     return(jsonify(data))
 
-
+# Top 20 GDP connection
 @app.route("/top20GDP")
 def TopGDP():
 
@@ -58,7 +58,7 @@ def TopGDP():
         print(row)
     return(jsonify(data))
 
-
+# Top 20 Renewable Energy connection
 @app.route("/top20Energy")
 def TopRenewableEnergy():
 
