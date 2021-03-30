@@ -4,7 +4,7 @@ from flask import Flask, jsonify, render_template
 #################################################
 # Database Setup
 #################################################
-connection_string = "postgres:@localhost:5432/climate_change"
+connection_string = "postgres:270504@localhost:5432/climate_change_db"
 engine = create_engine(f'postgresql://{connection_string}')
 
 connection = engine.connect()
@@ -45,13 +45,14 @@ def TopC02():
 def TopGDP():
 
     result = connection.execute(
-        """SELECT country_code, country_name, "2015" FROM gdp ORDER BY "2015" DESC LIMIT 20;""")
+        """SELECT country_code, country_name, color, "2015" FROM gdp ORDER BY "2015" DESC LIMIT 20;""")
     data = []
     for row in result:
         my_dict = {
             "country_code": row[0],
             "country_name": row[1],
-            "2015": float(row[2])
+            "2015": float(row[3]),
+            "color": row[2]
         }
         data.append(my_dict)
         print(row)
@@ -62,13 +63,14 @@ def TopGDP():
 def TopRenewableEnergy():
 
     result = connection.execute(
-        """SELECT country_code, country_name, "2015" FROM renewable_energy ORDER BY "2015" DESC LIMIT 20;""")
+        """SELECT country_code, country_name, color, "2015" FROM renewable_energy ORDER BY "2015" DESC LIMIT 20;""")
     data = []
     for row in result:
         my_dict = {
             "country_code": row[0],
             "country_name": row[1],
-            "2015": float(row[2])
+            "2015": float(row[3]),
+            "color": row[2]
         }
         data.append(my_dict)
         print(row)
@@ -77,3 +79,4 @@ def TopRenewableEnergy():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
