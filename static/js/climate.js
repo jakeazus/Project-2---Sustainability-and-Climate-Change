@@ -43,11 +43,16 @@ function d3PieChart(){
       var data_ready = pie(d3.entries(pie_data))
 
       // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-      svg.selectAll('.pieChart')
+      
+      var arcGenerator = d3.arc()
+        .innerRadius(0)
+        .outerRadius(radius)
+      
+      svg.selectAll('mySlices')
       .data(data_ready)
       .enter()
       .append('path')
-      .attr('d', d3.arc()
+      .attr('d', arcGenerator
       .innerRadius(0)
       .outerRadius(radius)
       )
@@ -56,17 +61,17 @@ function d3PieChart(){
       .style("stroke-width", "2px")
       .style("opacity", 0.7)
 
-      svg.selectAll('.pieChart')
+      svg.selectAll('mySlices')
       .data(data_ready)
       .enter()
       .append('text')
-      .text(function(d){ return (d.data.country_code)})
+      .text(function(d){ return (d.data.key)})
       // .attr("x",300)
       // .attr("y",300)
-      .attr("fill", "white")
+      // .attr("fill", "white")
       .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
       .style("text-anchor", "middle")
-      .style("font-size", 17)
+      .style("font-size", 11)
 
 
       
@@ -112,6 +117,9 @@ d3.json(url, function (data) {
     .selectAll("text")
     .attr("transform", "translate(-10,0)rotate(-45)")
     .style("text-anchor", "end")
+    .style("font-size", "20px")
+    .attr("fill", "white") 
+    // .attr("fill", "white")
 
     svg.append("text")             
       .attr("transform",
@@ -128,6 +136,9 @@ d3.json(url, function (data) {
     .padding(.1);
   svg.append("g")
     .call(d3.axisLeft(y))
+    .selectAll("text")
+    .style("font-size", "20px")
+    .attr("fill", "white") 
     svg.append("text")
     .attr("transform", "rotate(-90)")
     .attr("y", 0 - margin.left)
@@ -197,6 +208,8 @@ function d3EnergyBar() {
       .selectAll("text")
       .attr("transform", "translate(-10,0)rotate(-45)")
       .style("text-anchor", "end")
+      .style("font-size", "20px")
+      .attr("fill", "white") 
   
       svg.append("text")             
         .attr("transform",
@@ -213,6 +226,9 @@ function d3EnergyBar() {
       .padding(.1);
     svg.append("g")
       .call(d3.axisLeft(y))
+      .style("font-size", "20px")
+      .selectAll("text")
+      .style("fill", "white") 
       svg.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left)
