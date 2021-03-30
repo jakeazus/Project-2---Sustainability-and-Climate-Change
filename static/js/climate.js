@@ -34,7 +34,7 @@ function d3PieChart(){
       var color = d3.scaleOrdinal()
       .domain(pie_data)
       .range(data.map(obj=>obj.color))
-      // .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"])
+      
 
 
       // Compute the position of each group on the pie:
@@ -80,8 +80,14 @@ function d3PieChart(){
 
 
 d3PieChart();
-      
-// BAR CHART -- https://www.d3-graph-gallery.com/graph/barplot_horizontal.html
+ 
+
+
+
+
+
+
+// BAR CHART 
 function d3GDPbar() {
 url = "/top20GDP"
 d3.json(url, function (data) {
@@ -99,14 +105,9 @@ d3.json(url, function (data) {
     .attr("transform",
       "translate(" + margin.left + "," + margin.top + ")");
   // // Parse the Data
-  // d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv", function(data) 
-  // Create dummy data
-  var gdpbar_data = {}
+  
   data
-    // .slice(0,4)
-    // .map(obj => {
-    //   gdpbar_data[obj.country_code] = obj["2015"]
-    // });
+    
   // Add X axis
   var x = d3.scaleLinear()
     .domain([-6, 8])
@@ -119,7 +120,7 @@ d3.json(url, function (data) {
     .style("text-anchor", "end")
     .style("font-size", "20px")
     .attr("fill", "white") 
-    // .attr("fill", "white")
+    
 
     svg.append("text")             
       .attr("transform",
@@ -129,6 +130,8 @@ d3.json(url, function (data) {
       .style("font-size", "22px")
       .attr("fill", "white")  
       .text("GDP");
+  
+
   // Y axis
   var y = d3.scaleBand()
     .range([0, height])
@@ -173,6 +176,9 @@ d3.json(url, function (data) {
 };
 d3GDPbar();
 
+
+
+
 function d3EnergyBar() {
   url = "/top20Energy"
   d3.json(url, function (data) {
@@ -190,14 +196,11 @@ function d3EnergyBar() {
       .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
     // // Parse the Data
-    // d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv", function(data) 
-    // Create dummy data
-    var gdpbar_data = {}
+    
+  
+    
     data
-      // .slice(0,4)
-      // .map(obj => {
-      //   gdpbar_data[obj.country_code] = obj["2015"]
-      // });
+      
     // Add X axis
     var x = d3.scaleLinear()
       .domain([-2, 50])
