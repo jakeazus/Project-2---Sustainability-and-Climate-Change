@@ -44,5 +44,6 @@ We created a dashboard of visuals using [d3, plotly] to showcase our findings.
 * GDP by country (1960-2016)- https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?view=chart
 * Renewable energy consumption (% of total final energy consumption) (1990-2015)- https://data.worldbank.org/indicator/EG.FEC.RNEW.ZS?view=chart
 
+![Screen Shot 2021-03-30 at 5 29 45 PM](https://user-images.githubusercontent.com/13200513/113078106-72197d00-91a0-11eb-891d-1131974cd009.png)
 
 Team members: Anna Bowers, Mario Lozano, Jake Azus, Justine Sbarra, and Ivana Korak
